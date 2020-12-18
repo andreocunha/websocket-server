@@ -1,10 +1,9 @@
 // server.js
-
 const WebSocket = require('ws')
 
 const wss = new WebSocket.Server({ port: 4000 })
 
-let temperatura = '0'
+let temperatura = 0
 
 wss.on('connection', ws => {
     console.log('Nova conexão')
@@ -13,6 +12,6 @@ wss.on('connection', ws => {
         temperatura = message
     })
 
-    setInterval(function () { ws.send(temperatura); }, 1000);
+    setInterval(function () { temperatura+=1; ws.send(temperatura); }, 1000);
 
 })
