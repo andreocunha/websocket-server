@@ -4,7 +4,6 @@ const server = require('http').createServer(app)
 const WebSocket = require('ws')
 var port = process.env.PORT || 4000;
 
-
 const wss = new WebSocket.Server({ server })
 
 let temperatura = 0
