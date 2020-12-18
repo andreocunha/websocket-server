@@ -15,7 +15,7 @@ wss.on('connection', ws => {
         temperatura = message
     })
 
-    setInterval(function () { temperatura+=1; ws.send(temperatura); }, 1000);
+    setInterval(function () { ws.send(temperatura); }, 1000);
 
 })
 
