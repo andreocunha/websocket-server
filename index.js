@@ -6,6 +6,13 @@ var port = process.env.PORT || 4000;
 
 const wss = new WebSocket.Server({ server })
 
+app.set('forceSSLOptions', {
+    enable301Redirects: true,
+    trustXFPHeader: false,
+    httpsPort: 443,
+    sslRequiredMessage: 'SSL Required.'
+});
+
 let temperatura = 0
 
 wss.on('connection', ws => {
